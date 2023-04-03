@@ -1,0 +1,27 @@
+////////////////////////////////////////////////////////////////
+//Created by: Jackson Knoell, Alex Keen, Bennet Wilson, Noah Reid
+//Creating a Currency Converter;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.Scanner;
+public class Converter {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+
+        //NumberFormat
+        String us = NumberFormat.getCurrencyInstance(Locale.US).format(payment);
+        String india = NumberFormat.getCurrencyInstance(Locale.).format(payment);
+        String us = NumberFormat.getCurrencyInstance(Locale.US).format(payment);
+        String us = NumberFormat.getCurrencyInstance(Locale.US).format(payment);
+
+        //Currencies
+        System.out.println("US" + us);
+        System.out.println("India" + india);
+        System.out.println("EUR" + "");
+        System.out.println("CNY" + "");
+
+    }//Main
+}//Converter
