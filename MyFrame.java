@@ -9,6 +9,7 @@ public class MyFrame extends JFrame implements ActionListener{
     JButton button2 = new JButton();
     JButton button3 = new JButton();
     JButton button4 = new JButton();
+
     JLabel label;
 
     MyFrame() {
@@ -61,16 +62,24 @@ public class MyFrame extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==button1) {
-            System.out.println("USD");
+            String currencyType = "USD";
+            this.setVisible(false);
+            EnterAmount enterUSD = new EnterAmount();
         }
         if(e.getSource()==button2) {
-            System.out.println("CAD");
+            String currencyType = "CAD";
+            this.setVisible(false);
+            EnterAmount enterUSD = new EnterAmount();
         }
         if(e.getSource()==button3) {
-            System.out.println("EURO");
+            String currencyType = "EURO";
+            this.setVisible(false);
+            EnterAmount enterUSD = new EnterAmount();
         }
         if(e.getSource()==button4) {
-            System.out.println("CNY");
+            String currencyType = "CNY";
+            this.setVisible(false);
+            EnterAmount enterUSD = new EnterAmount();
         }
     }
 }
