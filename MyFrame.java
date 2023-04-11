@@ -9,7 +9,15 @@ public class MyFrame extends JFrame implements ActionListener{
     JButton button2 = new JButton();
     JButton button3 = new JButton();
     JButton button4 = new JButton();
+    JLabel label;
+
     MyFrame() {
+
+        JLabel label = new JLabel();
+        label.setSize(50,100);
+        label.setBounds(175,0,150,100);
+        label.setVisible(true);
+        label.setText("Enter Currency Type");
 
         button1.setBounds(100, 100, 250, 50);
         button1.addActionListener(this);
@@ -47,6 +55,7 @@ public class MyFrame extends JFrame implements ActionListener{
         this.add(button2);
         this.add(button3);
         this.add(button4);
+        this.add(label);
     }
 
     @Override
