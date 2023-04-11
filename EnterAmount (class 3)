@@ -1,0 +1,31 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+public class EnterAmount extends JFrame implements ActionListener {
+
+    JTextField textField;
+    JButton button;
+    EnterAmount(){
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new FlowLayout());
+
+        button = new JButton("Enter");
+        button.addActionListener(this);
+
+        textField = new JTextField();
+        textField.setPreferredSize(new Dimension(250,40));
+        textField.setFont(new Font("Comic Sans",Font.PLAIN,35));
+
+        this.add(button);
+        this.add(textField);
+        this.pack();
+        this.setVisible(true);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+}
