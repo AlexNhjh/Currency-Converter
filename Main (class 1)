@@ -1,9 +1,14 @@
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        MyFrame frame = new MyFrame();
+        MyFrame frame1 = new MyFrame();
+        MyFrame frame2 = new MyFrame();
 
+        if(frame1.isVisible() == true) {
+            frame2.setVisible(false);
+        }
+        frame2.setVisible(true);
     }
 }
