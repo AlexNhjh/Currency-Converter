@@ -65,21 +65,29 @@ public class MyFrame extends JFrame implements ActionListener{
             String currencyType = "USD";
             this.setVisible(false);
             EnterAmount enterUSD = new EnterAmount();
+            enterUSD.setTitle("Enter amount in USD");
+            enterUSD.textField.setText("$");
         }
         if(e.getSource()==button2) {
             String currencyType = "CAD";
             this.setVisible(false);
-            EnterAmount enterUSD = new EnterAmount();
+            EnterAmount enterCAD = new EnterAmount();
+            enterCAD.setTitle("Enter amount in CAD");
+            enterCAD.textField.setText("C$");
         }
         if(e.getSource()==button3) {
             String currencyType = "EURO";
             this.setVisible(false);
-            EnterAmount enterUSD = new EnterAmount();
+            EnterAmount enterEURO = new EnterAmount();
+            enterEURO.setTitle("Enter amount in EURO");
+            enterEURO.textField.setText("€");
         }
         if(e.getSource()==button4) {
             String currencyType = "CNY";
             this.setVisible(false);
-            EnterAmount enterUSD = new EnterAmount();
+            EnterAmount enterCNY = new EnterAmount();
+            enterCNY.setTitle("Enter amount in CNY");
+            enterCNY.textField.setText("¥");
         }
     }
 }
