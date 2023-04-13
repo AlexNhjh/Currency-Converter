@@ -29,5 +29,6 @@ public class EnterAmount extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String initAmount = textField.getText();
         System.out.println(initAmount);
+        this.setVisible(false);
     }
 }
