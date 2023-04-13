@@ -14,9 +14,10 @@ public class EnterAmount extends JFrame implements ActionListener {
 
         button = new JButton("Enter");
         button.addActionListener(this);
+        button.setFocusable(false);
 
         textField = new JTextField();
-        textField.setPreferredSize(new Dimension(250,40));
+        textField.setPreferredSize(new Dimension(400,60));
         textField.setFont(new Font("Comic Sans",Font.PLAIN,35));
 
         this.add(button);
@@ -26,6 +27,7 @@ public class EnterAmount extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        String initAmount = textField.getText();
+        System.out.println(initAmount);
     }
 }
