@@ -1,0 +1,86 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class ConvertTo extends JFrame implements ActionListener {
+
+    JButton button1 = new JButton();
+    JButton button2 = new JButton();
+    JButton button3 = new JButton();
+    JButton button4 = new JButton();
+
+    ConvertTo() {
+        JLabel label = new JLabel();
+        label.setSize(50,100);
+        label.setBounds(135,0,300,100);
+        label.setVisible(true);
+        label.setText("What do you want to convert to?");
+
+        button1.setBounds(100, 100, 250, 50);
+        button1.addActionListener(this);
+        button1.setText("USD");
+        button1.setFocusable(false);
+        button1.setForeground(Color.black);
+        button1.setBackground(Color.WHITE);
+
+        button2.setBounds(100, 170, 250, 50);
+        button2.addActionListener(this);
+        button2.setText("CAD");
+        button2.setFocusable(false);
+        button2.setForeground(Color.black);
+        button2.setBackground(Color.WHITE);
+
+        button3.setBounds(100, 240, 250, 50);
+        button3.addActionListener(this);
+        button3.setText("EURO");
+        button3.setFocusable(false);
+        button3.setForeground(Color.black);
+        button3.setBackground(Color.WHITE);
+
+        button4.setBounds(100, 310, 250, 50);
+        button4.addActionListener(this);
+        button4.setText("CNY");
+        button4.setFocusable(false);
+        button4.setForeground(Color.black);
+        button4.setBackground(Color.WHITE);
+
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(null);
+        this.setSize(500,500);
+        this.add(button1);
+        this.add(button2);
+        this.add(button3);
+        this.add(button4);
+        this.add(label);
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==button1) {
+            this.setVisible(false);
+            String finalCurrency = "$";
+            //int finalAmount =
+            if(finalCurrency == "$") {
+                JOptionPane.showMessageDialog(null, "You have " + finalCurrency);
+
+            }
+        }
+        if(e.getSource()==button2) {
+            this.setVisible(false);
+            String finalCurrency = "C$";
+            JOptionPane.showMessageDialog(null, "You have "+finalCurrency);
+        }
+        if(e.getSource()==button3) {
+            this.setVisible(false);
+            String finalCurrency = "€";
+            JOptionPane.showMessageDialog(null, "You have "+finalCurrency);
+        }
+        if(e.getSource()==button4) {
+            this.setVisible(false);
+            String finalCurrency = "¥";
+            JOptionPane.showMessageDialog(null, "You have "+ finalCurrency);
+        }
+    }
+}
