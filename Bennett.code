@@ -1,0 +1,102 @@
+// Exchange rates from 4/20/2023
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class CurrencyConverter extends JFrame implements ActionListener {
+    private JTextField amountField;
+    private JComboBox<String> fromCurrency;
+    private JComboBox<String> toCurrency;
+    private JLabel resultLabel;
+
+    public CurrencyConverter() {
+        // Set up the main frame
+        super("Currency Converter");
+        setSize(400, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Create the GUI components
+        JPanel panel = new JPanel(new GridLayout(4, 2));
+        JLabel amountLabel = new JLabel("Amount:");
+        amountField = new JTextField(10);
+        JLabel fromLabel = new JLabel("From:");
+        fromCurrency = new JComboBox<String>(new String[]{"USD", "EUR", "GBP", "JPY"});
+        JLabel toLabel = new JLabel("To:");
+        toCurrency = new JComboBox<String>(new String[]{"USD", "EUR", "GBP", "JPY"});
+        JButton convertButton = new JButton("Convert");
+        convertButton.addActionListener(this);
+        resultLabel = new JLabel("");
+
+        // Add the components to the panel
+        panel.add(amountLabel);
+        panel.add(amountField);
+        panel.add(fromLabel);
+        panel.add(fromCurrency);
+        panel.add(toLabel);
+        panel.add(toCurrency);
+        panel.add(convertButton);
+        panel.add(resultLabel);
+
+        // Add the panel to the frame
+        add(panel);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        // Get the values from the GUI components
+        double amount = Double.parseDouble(amountField.getText());
+        String from = (String) fromCurrency.getSelectedItem();
+        String to = (String) toCurrency.getSelectedItem();
+
+        // Perform the conversion
+        double result;
+        if (from.equals("USD")) {
+            if (to.equals("EUR")) {
+                result = amount * 0.91;
+            } else if (to.equals("GBP")) {
+                result = amount * 0.8;
+            } else if (to.equals("JPY")) {
+                result = amount * 134.23;
+            } else {
+                result = amount;
+            }
+        } else if (from.equals("EUR")) {
+            if (to.equals("USD")) {
+                result = amount * 1.1;
+            } else if (to.equals("GBP")) {
+                result = amount * 0.88;
+            } else if (to.equals("JPY")) {
+                result = amount * 147.2;
+            } else {
+                result = amount;
+            }
+        } else if (from.equals("GBP")) {
+            if (to.equals("USD")) {
+                result = amount * 1.24;
+            } else if (to.equals("EUR")) {
+                result = amount * 1.13;
+            } else if (to.equals("JPY")) {
+                result = amount * 167.01;
+            } else {
+                result = amount;
+            }
+        } else {
+            if (to.equals("USD")) {
+                result = amount * 0.0074;
+            } else if (to.equals("EUR")) {
+                result = amount * 0.0068;
+            } else if (to.equals("GBP")) {
+                result = amount * 0.006;
+            } else {
+                result = amount;
+            }
+        }
+
+        // Display the result
+        resultLabel.setText(String.format("%.2f %s = %.2f %s", amount, from, result, to));
+    }
+
+    public static void main(String[] args) {
+        new CurrencyConverter();
+    }
+}
